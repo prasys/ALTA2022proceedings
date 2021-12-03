@@ -1,0 +1,382 @@
+%%%% SemDial Proceedings template by Raquel Fernández, 2013.
+%%%% Modified by Simon Dobnik for the proceedings of IWCS 2019.
+
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} % fonts to encode unicode
+\usepackage{times}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{color}
+%\usepackage{calc}
+\usepackage{url}
+%\usepackage{xcolor}
+\pagestyle{plain}
+
+
+\usepackage[colorlinks,
+%%% EDIT TITLE: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            pdftitle={Proceedings of the 19th Workshop of the Australasian Language Technology Association},
+            pdfauthor={Australasian Language Technology Association},
+            %pdfsubject={...},
+            %pdfkeywords={...}
+           ]{hyperref}   % hyperlinked table of contents, etc.
+\include{citation-stamp}
+% Textarea
+\setlength{\textwidth}{17.7cm}
+\setlength{\textheight}{25cm}
+\setlength{\oddsidemargin}{-0.6cm}
+\setlength{\topmargin}{-1.5cm}
+
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\newcommand{\putframe}[2]{\citeinfo{#1}{#2}}
+\newcommand{\nofooterframe}{}
+\newcommand{\draft}{\renewcommand{\putframe}{\noindent\vspace*{-8pt}\textcolor{red}{\hrule height 1mm}
+\vfill\noindent\textcolor{red}{\hrule height 1mm}}}
+
+% Parameters: file name, title, authors, horizontal offset, vertical offset
+\newcommand{\paper}[5]{%
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{\hspace{-17pt}#2}
+\addtocontents{toc}{$\,$\textit{#3}\vspace{5pt}}
+%\includepdf[pages=-,offset={#4 #5},pagecommand={\putframe}]{#1}
+\includepdf[pages=1,offset={#4 #5},pagecommand={\putframe{#2}{#3}}]{#1}
+\ClearShipoutPicture
+\includepdf[pages=2-,offset={#4 #5},pagecommand={\nofooterframe}]{#1}
+%\includepdf[pages=1,pagecommand={}}]{#1}
+
+%\includepdf[pages=2-}]{#1}
+
+\cleardoublepage}
+
+\newcommand{\goodpaper}[3]{\paper{#1}{#2}{#3}{-0mm}{-0mm}}
+
+\newcounter{DOIcounter}
+
+%\draft
+
+
+\begin{document}
+\pagenumbering{roman}
+%%  TITLE PAGE 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfbookmark{Proceedings of the 19th Workshop of the Australasian Language Technology Association}{title}
+\thispagestyle{empty}
+
+\begin{center}
+  \LARGE ALTA 2021 \\
+  \vspace*{55mm}
+    {\bf
+    %\Huge
+    \LARGE
+    % \fontsize{38}{46}\selectfont
+   Proceedings of the 19th Workshop of the \\ Australasian Language Technology Association\\
+    \hspace*{1cm}\\ \hspace*{1cm} \\
+    \hspace*{1cm} \\ \hspace*{1cm}\\
+    \hspace*{1cm}\\
+    \vspace{1cm}
+	\includegraphics[width=0.6\linewidth]{../templates/alta}
+    %\Huge
+    \LARGE
+    % Proceedings of the Conference, Long Papers\\
+    \vspace{1cm}
+    \hspace*{1cm}} \\ % Full Volume
+    %\vspace{75mm}
+    \vspace{10mm}
+    \LARGE
+    8--10 December, 2021\\
+    Online
+  \end{center}
+
+\clearpage
+
+%% DETAILS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfbookmark{ISBN}{isbn}
+\thispagestyle{empty}
+
+% INCLUDE SPONSOR LOGOS HERE.  Upload your images with a template set.
+% Then, for a file called ``logo.png'', you would use a line like the
+% the following:
+%
+\includegraphics[width=0.8\linewidth]{../templates/logo.png}
+%\includegraphics[width=4.5cm]{pics/CLASP_Ordbild_orange.pdf} \quad \includegraphics[width=2.5cm]{pics/gothenburg.jpg} \quad %\includegraphics[width=2.5cm]{pics/mlt.png}  \quad \includegraphics[width=4.5cm]{pics/talkamatic.png} 
+
+
+%\vspace*{3.5in}
+%\large
+%\noindent
+%\copyright 2021 The Association for Computational Linguistics\\
+%\hspace*{6.5mm} \\
+
+%\vspace*{0.6in}
+%\noindent Order copies of this and other ACL proceedings from: \\
+%\vspace*{3mm}
+
+%\begin{tabular}{ll}
+%\ \ \ \ \ \ & Australasian Language Technology Association (ALTA)\\
+%& 209 N. Eighth Street\\
+%& Stroudsburg, PA 18360\\
+%& USA\\
+%& Tel: +1-570-476-8006\\
+%& Fax: +1-570-476-0860\\
+%&{\tt acl@aclweb.org}\\
+%\end{tabular}
+
+%\vspace*{6mm}
+%\noindent ISBN \\
+% This is the ISBN for a main proceedings -- Volume 1.
+% \noindent ISBN 978-1-945626-01-2 (Volume 2)\\
+% This is the ISBN for  main proceedings -- Volume 2.
+% Use the right ISBN for your proceedings
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\pdfbookmark{Preface}{preface}
+
+%\section*{Preface}
+
+\begin{center}
+  {\Large \bf Introduction}
+\end{center}
+
+\vspace*{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% INSERT YOUR INTRO HERE
+% Welcome to the ACL Workshop on Unresolved Matters. We received
+% 17 submissions, and due to a rigerous review process, we rejected 16. 
+
+Welcome to the 19th edition of the Annual Workshop of the Australasian Language Technology Association (ALTA 2021). The purpose of ALTA is to promote language technology research and development
+in Australia and New Zealand. Every year ALTA hosts a workshop which is the key local forum for disseminating research in Natural Language Processing and Computational Linguistics, with presentations
+and posters from students, industry, and academic researchers. This year ALTA is hosted as a virtual
+workshop, due to the COVID-19 pandemic.
+In total we received 18 long, 8 short, and 2 abstract submissions and we accepted 15 long and 7 short papers to appear
+in the workshop, as well as the 2 extended abstracts. Each paper was reviewed by
+at least two members of the program committee, using a double-blind protocol. Great care was taken to avoid
+all conflicts of interest. Of all submissions, 25 were first-authored by students.
+We had submissions from a total of seven countries: Australia, New Zealand, Spain, France, Germany, Netherlands and United
+States. We are extremely grateful to the Programme Committee members for their time and their detailed and helpful comments and reviews. This year we had committee members from all over the globe
+including Australia, New Zealand, Japan, Sweden, Switzerland, United States and United Arab Emirates.
+Overall, there will be six oral presentation sessions and two virtual poster sessions. We also ran a shared
+task in Evidence Based
+Medicine (EBM) organised by Diego Mollá-Aliod (Macquarie University). Participants were invited to submit a system description paper, which are included in this volume with a light review by ALTA chairs. Finally, the workshop will feature keynotes from Barbara Plank (IT University of Copenhagen), Ben Hutchinson (Google) and
+Dirk Hovy (Bocconi University), following a tradition of bringing speakers from both academia
+and industry.
+ALTA 2021 is very grateful for the financial support generously offered by our sponsors. Without their
+contribution, the running of these events to bring together the NLP community of the Australasian region
+would have been a challenge. We would like to express sincere gratitude to our sponsors.
+We very much hope that you will have an enjoyable and inspiring time at ALTA 2021!
+
+\vspace{20pt}
+\hfill Afshin Rahimi, William Lane and Guido Zuccon
+
+\hfill Brisbane, Australia 
+
+\hfill Dec 2021
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\pdfbookmark{Programme Committee}{pc}
+
+%\begin{center}
+%  {\Large \bf Organizers}
+%\end{center}
+
+\vspace*{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+% \item{\bf Organizers:}\vspace{2mm} \\
+% John Doe, Univeristy of Southern Atlantis\\
+% Jane Example, ACME Research Labs
+
+\item{\bf Organisers:}\vspace{1mm} \\
+  \emph{Program co-chairs:} Afshin Rahimi, William Lane and Guido Zuccon \\
+    \emph{Program Execs:} Maria Kim, Sarvnaz Karimi, Meladel Mistica, Diego Mollá and Massimo Piccardi  \\
+    \emph{Shared task chair:} Diego Mollá\\
+  
+\vspace{1mm}
+\item{\bf Program Committee:}\vspace{2mm} \\
+Abeed Sarkar (Emory University)\\
+Afshin Rahimi (The University of Queensland)\\
+Andrea Schalley (Karlstad University)\\
+Antonio Jimeno (RMIT University)\\
+Diego Molla (Macquarie University)\\
+Dominique Estival (Western Sydney University)\\
+Fajri Koto (The University of Melbourne)\\
+Gabriela Ferraro (CSIRO)\\
+Gholamreza Haffari (Monash University)\\
+Hamed Hassanzadeh (The Australian e-Health Research Centre, CSIRO)\\
+Guido Zuccon (University of Queensland)\\
+Hiyori Yoshikawa (Fujitsu Laboratories Ltd.)\\
+Jennifer Biggs (Defence Science and Technology Group)\\
+Jey Han Lau (University of Melbourne)\\
+Karin Verspoor (RMIT University)\\
+Kristin Stock (Massey University)\\
+Lea Frermann (The University of Melbourne)\\
+Lizhen Qu (Monash University)\\
+Maria Kim (Defence Science and Technology Group)\\
+Massimo Piccardi (University of Technology Sydney)\\
+Mel Mistica (The University of Melbourne)\\
+Nitin Indurkhya (The University of New South Wales)\\
+Sarvnaz Karimi (CSIRO)\\
+Scott Nowson (PwC Middle East)\\
+Stephen Wan (CSIRO)\\
+Sunghwan Mac Kim (Hara Research Lab)\\
+Timothy Baldwin (The University of Melbourne)\\
+Trevor Cohn (The University of Melbourne)\\
+William Lane (Charles Darwin University)\\
+Wray Lindsay Buntine (Monash University)\\
+Xiang Dai (University of Copenhagen)
+
+% Sandy Critical, Institute for Analysis (USA)\\
+% Larry Feelgood, Univeristy of Entenhausen (Germany)\\
+% Benedict Sixteen, Vatican University (Holy Sea)
+
+% \vspace{3mm}
+% \item{\bf Additional Reviewers:} \vspace{2mm} \\
+% Gary Lastminute, Emergency Relief Lab (Switzerland)
+
+\vspace{3mm}
+\item{\bf Invited Speakers:}\vspace{2mm} \\
+  % James Goodword, Academy of Hysterical Laughter
+  Barbara Plank, IT University of Copenhagen \\
+  Ben Hutchinson, Google \\
+  Dirk Hovy, Bocconi University
+
+% Panelists
+
+% Invited Paper
+
+\end{description}
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pdfbookmark{Invited talks}{invited}
+
+%\section*{Invited talks}
+
+\begin{center}
+  {\Large \bf Invited Talks}
+\end{center}
+
+\vspace*{0.5cm}
+
+\textbf{Barbara Plank: Tackling scarce and biased data for more inclusive Natural Language Processing}
+
+Deep neural networks have revolutionised our field in recent years. Particularly contextualised representations obtained from large-scale language models have pushed frontiers. Despite of these advances, many challenges and research problems remain, due to the rich variability of language and a dreadful lack and bias in resources. In this talk, I will outline possible ways to go about these challenges to tackle scarce data and label bias. I will draw upon recent research in cross-lingual learning, data selection and learning from disagreement and present (on-going) work applied to NLP tasks such as syntactic processing, named entity recognition and task-oriented dialogue, showing how weak supervision and multi-task learning can help remedy some of these challenges.
+
+\bigskip
+
+\textbf{Ben Hutchinson: Putting NLP Ethics Into Context}
+
+In order to consider the societal and ethical consequences of biases in NLP models, it is necessary to consider how the models will be integrated into user-facing AI systems and products. We also need to consider who those systems will be used by, on and with. In the first part of this talk, I will adopt a wide lens and consider technology ethics within various social, cultural and historical contexts, using examples from my research. In the second part of this talk, I will zoom in to discuss practical challenges that arise when building NLP systems that are contextually appropriate and responsible.
+
+\bigskip
+
+\textbf{Dirk Hovy: More than words – Integrating social factors into language modeling}
+
+Language is a social construct. We use it to achieve various conversational goals. Only one among them is to convey information. However, natural language processing has traditionally focused only on this informational aspect, ignoring all social aspects of language. That restriction was partially necessary to make modeling progress. However, I argue that as modeling power increases, we might want to revisit the issue. Social aspects of language can help disambiguate meaning, add more nuance to our models, and are becoming increasingly important in all aspects of generation. In this talk, I will outline several of the social dimensions that influence language use, how they affect NLP models, and what efforts are already underway to incorporate them. I will conclude with some open questions and ideas for future directions. If we manage to include social aspects of language into NLP, I believe we will open new research avenues, improve performance, and create fairer language technology.
+
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{programme}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pdfbookmark{Table of Contents}{toc}
+\setlength{\parskip}{0pt}
+
+\renewcommand{\contentsname}{\mbox{}\\[-108pt]\noindent\textbf{\Large
+    Table of Contents}\\[-28pt]}
+\tableofcontents
+\cleardoublepage
+
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pdfbookmark{Invited Talks}{invited}
+% \thispagestyle{empty}
+% \mbox{}\vfill
+% \begin{center}
+% \Huge \bf Invited Talks
+% \end{center}
+% \mbox{}\vfill
+
+% \clearpage
+
+% \addtocontents{toc}{\vspace{10pt} $\,$\textbf{Invited Talks}\vspace{5pt}}
+ 
+
+
+% \pdfbookmark{Full Papers}{papers}
+% \thispagestyle{empty}
+% \mbox{}\vfill
+% \begin{center}
+% \Huge \bf Full Papers
+% \end{center}
+% \mbox{}\vfill
+
+% \clearpage
+
+% \addtocontents{toc}{{}\\[10pt] \textbf{Full Papers}\vspace{5pt}}
+
+
+
+% \pdfbookmark{Poster Abstracts}{posters}
+% \thispagestyle{empty}
+% \mbox{}\vfill
+% \begin{center}
+% \Huge \bf Poster Abstracts
+% \end{center}
+% \mbox{}\vfill
+
+% \clearpage
+
+% \addtocontents{toc}{{}\\[10pt] \textbf{Poster Abstracts}\vspace{5pt}}
+
+% \goodpaper{../pdf/IWCS_2019_paper_1.pdf}{Temporal and Aspectual Entailment}%
+% {Thomas Kober, Sander Bijl de Vroe and Mark Steedman}
+
+% \goodpaper{../pdf/IWCS_2019_paper_3.pdf}{Re-Ranking Words to Improve Interpretability of Automatically Generated Topics}%
+% {Areej Alokaili, Nikolaos Aletras and Mark Stevenson}
+\setcounter{page}{1}
+\ClearShipoutPicture
+
+\include{all_papers}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+% \clearpage
+% \thispagestyle{empty}
+% \pagecolor{myred}
+% \mbox{}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

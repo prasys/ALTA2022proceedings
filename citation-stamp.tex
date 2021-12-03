@@ -1,0 +1,13 @@
+\usepackage{color}
+\definecolor{brown}{rgb}{0.59, 0.29, 0.0}
+\newcommand{\changeurlcolor}[1]{\hypersetup{urlcolor=#1}}       
+\newcommand{\citeinfo}[2]{
+  \AddToShipoutPicture{
+    \setlength{\unitlength}{1mm}
+%%%% Edit event name, dates, location and copyright (if needed)  %%%%%%%%%%%%%%%%%%%%%%
+    \put(105,13){\makebox(0,0){\fbox{\parbox{\textwidth}{\center \scriptsize #2. 2021. #1. {\em In Proceedings of the 19th Workshop of the
+    					Australasian Language Technology Association}. Dec 8--10, 2021.}}
+
+	}}
+     
+}}
